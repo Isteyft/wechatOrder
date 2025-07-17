@@ -1,0 +1,50 @@
+[
+  {
+    "menu_id": "index",
+    "name": "首页",
+    "icon": "uni-icons-home",
+    "url": "/",
+    "sort": 100,
+    "parent_id": "",
+    "permission": [],
+    "enable": true,
+    "create_date": 1602662469396,
+    "_id": "index"
+  },
+  {
+    "menu_id": "food-manage",
+    "name": "菜品管理",
+    "icon": "admin-icons-manager-goods",
+    "url": "/pages/food/list",
+    "sort": 900,
+    "parent_id": "",
+    "permission": [],
+    "enable": true,
+    "create_date": 1656491532434,
+    "_id": "food-manage"
+  },
+  {
+    "menu_id": "order-manage",
+    "name": "订单管理",
+    "icon": "admin-icons-manager-order",
+    "url": "/pages/order/list",
+    "sort": 910,
+    "parent_id": "",
+    "permission": [],
+    "enable": true,
+    "create_date": 1656491532435,
+    "_id": "order-manage"
+  },
+  {
+    "menu_id": "dashboard",
+    "name": "数据看板",
+    "icon": "admin-icons-dashboard",
+    "url": "/pages/dashboard/index",
+    "sort": 920,
+    "parent_id": "",
+    "permission": [],
+    "enable": true,
+    "create_date": 1656491532436,
+    "_id": "dashboard"
+  }
+]

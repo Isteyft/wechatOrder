@@ -1,0 +1,116 @@
+{
+	"bsonType": "object",
+	"required": ["name", "price", "status"],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+		  "description": "ID，系统自动生成",
+		  "bsonType": "string"
+		},
+		"name": {
+		  "bsonType": "string",
+		  "title": "菜品名称",
+		  "description": "菜品的名称",
+		  "minLength": 2,
+		  "maxLength": 20,
+		  "label": "名称"
+		},
+		"price": {
+		  "bsonType": "double",
+		  "title": "价格",
+		  "description": "菜品价格",
+		  "minimum": 0,
+		  "maximum": 9999,
+		  "label": "价格"
+		},
+		"image": {
+		  "bsonType": "string",
+		  "title": "图片地址",
+		  "description": "菜品图片在云存储中的路径",
+		  "format": "url",
+		  "label": "图片"
+		},
+		"category": {
+		  "bsonType": "string",
+		  "title": "分类",
+		  "description": "菜品分类（如热菜、凉菜）",
+		  "enum": ["热菜", "凉菜", "主食", "汤羹", "饮品", "甜品"],
+		  "label": "分类"
+		},
+		"description": {
+		  "bsonType": "string",
+		  "title": "描述",
+		  "description": "菜品描述",
+		  "maxLength": 100,
+		  "label": "描述"
+		},
+		"status": {
+		  "bsonType": "string",
+		  "title": "状态",
+		  "description": "菜品状态",
+		  "enum": ["on", "off"],
+		  "defaultValue": "on",
+		  "label": "状态"
+		},
+		"sort": {
+		  "bsonType": "int",
+		  "title": "排序值",
+		  "description": "菜单显示顺序（值越大越靠前）",
+		  "defaultValue": 100,
+		  "label": "排序"
+		},
+		"create_time": {
+		  "bsonType": "timestamp",
+		  "title": "创建时间",
+		  "description": "数据创建时间",
+		  "label": "创建时间"
+		},
+	"specs": {
+      "bsonType": "array",
+      "title": "规格选项",
+      "description": "菜品的规格选项",
+      "items": {
+        "bsonType": "object",
+        "required": ["name", "options"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "title": "规格名称",
+            "description": "如份量、口味等",
+            "minLength": 1,
+            "maxLength": 10
+          },
+          "options": {
+            "bsonType": "array",
+            "title": "规格选项",
+            "description": "该规格下的选项",
+            "items": {
+              "bsonType": "object",
+              "required": ["name", "price"],
+              "properties": {
+                "name": {
+                  "bsonType": "string",
+                  "title": "选项名称",
+                  "minLength": 1,
+                  "maxLength": 10
+                },
+                "price": {
+                  "bsonType": "double",
+                  "title": "价格增量",
+                  "description": "相对于基础价格的增减",
+                  "minimum": -999,
+                  "maximum": 999
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
